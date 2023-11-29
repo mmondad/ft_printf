@@ -6,7 +6,7 @@
 /*   By: mmondad <mmondad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:14:01 by mmondad           #+#    #+#             */
-/*   Updated: 2023/11/29 16:58:01 by mmondad          ###   ########.fr       */
+/*   Updated: 2023/11/29 18:40:28 by mmondad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	cheker(char c, va_list format, int count)
 	return (count);
 }
 
-int	ff(const char *format, int i, int count, va_list args)
+static int	ff(const char *format, int i, int count, va_list args)
 {
 	int	temp;
 
