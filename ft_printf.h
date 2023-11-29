@@ -6,7 +6,7 @@
 /*   By: mmondad <mmondad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:48:00 by mmondad           #+#    #+#             */
-/*   Updated: 2023/11/29 13:28:18 by mmondad          ###   ########.fr       */
+/*   Updated: 2023/11/29 13:52:59 by mmondad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <string.h>
 # include <stdarg.h>
 
-int	ft_putnbr_s_i(int nb, int i);
+int	ft_putnbr_s_i(long int nb, int i);
 int	ft_putnbr_u_i(unsigned int nb, int i);
 int	ft_put_add(unsigned long nb, char *base, int i);
 int	ft_putstr(char *str);

@@ -6,7 +6,7 @@
 /*   By: mmondad <mmondad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:19:46 by mmondad           #+#    #+#             */
-/*   Updated: 2023/11/29 13:28:05 by mmondad          ###   ########.fr       */
+/*   Updated: 2023/11/29 13:52:48 by mmondad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,10 @@ static int	num_len(int nb)
 	return (count);
 }
 
-int	ft_putnbr_s_i(int nb, int i)
+int	ft_putnbr_s_i(long int nb, int i)
 {
 	if (i == -1)
 		return (-1);
-	if (nb == -2147483648)
-	{
-		if (write(1, "-2147483648", 11) < 0)
-			return (-1);
-		return (11);
-	}
 	if (nb >= 0 && nb <= 9)
 	{
 		if (ft_putchar(nb + 48) < 0)
@@ -56,7 +50,7 @@ int	ft_putnbr_s_i(int nb, int i)
 		i = ft_putnbr_s_i(nb / 10, i);
 		i = ft_putnbr_s_i(nb % 10, i);
 	}
-	if (i == - 1)
+	if (i == -1)
 		return (-1);
 	return (num_len(nb));
 }

@@ -6,7 +6,7 @@
 /*   By: mmondad <mmondad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:14:01 by mmondad           #+#    #+#             */
-/*   Updated: 2023/11/29 13:28:30 by mmondad          ###   ########.fr       */
+/*   Updated: 2023/11/29 16:58:01 by mmondad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,11 @@ static int	cheker(char c, va_list format, int count)
 	return (count);
 }
 
-int	ft_printf(const char *format, ...)
+int	ff(const char *format, int i, int count, va_list args)
 {
-	va_list	args;
-	int		count;
-	int		i;
-	int		temp;
+	int	temp;
 
-	i = 0;
-	count = 0;
-	va_start(args, format);
+	temp = 0;
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -72,4 +67,20 @@ int	ft_printf(const char *format, ...)
 		}
 	}
 	return (count);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list	args;
+	int		count;
+	int		i;
+	int		s;
+
+	s = 0;
+	i = 0;
+	count = 0;
+	va_start(args, format);
+	s = ff(format, i, count, args);
+	va_end(args);
+	return (s);
 }
