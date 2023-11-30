@@ -6,7 +6,7 @@
 #    By: mmondad <mmondad@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 12:22:53 by mmondad           #+#    #+#              #
-#    Updated: 2023/11/28 13:00:15 by mmondad          ###   ########.fr        #
+#    Updated: 2023/11/29 19:08:28 by mmondad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,10 @@ OBJECTS = $(SOURCES:.c=.o)
 all: $(NAME)
 
 $(NAME) : $(OBJECTS)
-	ar -rcs  $(NAME) $(OBJECTS)
+
+.c.o:
+	$(CC) $(CFLAGS) -o $@ -c $<
+	ar rcs  $(NAME) $@
 
 clean:
 	rm -f $(OBJECTS)
